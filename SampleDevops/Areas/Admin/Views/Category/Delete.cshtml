@@ -1,0 +1,13 @@
+<!--OpenCatapultModelId:2-->
+@model SampleDevops.Areas.Admin.Models.CategoryViewModel
+@{
+    ViewData["Title"] = "Edit Category";
+}
+<h2>@ViewData["Title"]</h2>
+<form method="post" asp-route-id="@ViewData["Id"]">
+    <h3>Confirm delete Category?</h3>
+     <input type="submit" value="Delete" class="btn btn-danger" />
+</form>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,26 @@
+<!--OpenCatapultModelId:4-->
+@model List<SampleDevops.Areas.Admin.Models.OrderViewModel>
+@{
+    ViewData["Title"] = "View Order";
+}
+<h2>@ViewData["Title"]</h2>
+<div>
+    <a asp-area="Admin" asp-controller="Order" asp-action="Create" class="btn btn-default">Create</a>
+</div>
+<div>&nbsp;</div>
+<table class="table">
+    <tr>
+        <th>Order Date</th>
+        <th></th>
+    </tr>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@item.OrderDate</td>
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+        </td>
+    </tr>
+}
+</table>

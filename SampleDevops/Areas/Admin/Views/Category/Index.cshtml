@@ -1,0 +1,28 @@
+<!--OpenCatapultModelId:2-->
+@model List<SampleDevops.Areas.Admin.Models.CategoryViewModel>
+@{
+    ViewData["Title"] = "View Category";
+}
+<h2>@ViewData["Title"]</h2>
+<div>
+    <a asp-area="Admin" asp-controller="Category" asp-action="Create" class="btn btn-default">Create</a>
+</div>
+<div>&nbsp;</div>
+<table class="table">
+    <tr>
+        <th>Description</th>
+        <th>Title</th>
+        <th></th>
+    </tr>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@item.Description</td>
+        <td>@item.Title</td>
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+        </td>
+    </tr>
+}
+</table>

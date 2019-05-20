@@ -1,0 +1,24 @@
+<!--OpenCatapultModelId:6-->
+@model List<SampleDevops.Models.SaleViewModel>
+@{
+    ViewData["Title"] = "View Sale";
+}
+<h2>@ViewData["Title"]</h2>
+<div>&nbsp;</div>
+<table class="table">
+    <tr>
+        <th>Description</th>
+        <th>Title</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+    </tr>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@item.Description</td>
+        <td>@item.Title</td>
+        <td>@item.StartDate</td>
+        <td>@item.EndDate</td>
+    </tr>
+}
+</table>
